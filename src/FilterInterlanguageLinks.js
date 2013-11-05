@@ -24,6 +24,9 @@ var langsToShow = [ 'de', 'en', 'es', 'fr', 'gl', 'it', 'pt', 'ru', 'zh' ],
 		.addClass( 'interwiki-hidden-by-default' )
 		.hide()
 		.length;
+	if( !count ){
+		return;
+	}
 	$( mw.util.addPortletLink(
 		'p-lang',
 		'#',
