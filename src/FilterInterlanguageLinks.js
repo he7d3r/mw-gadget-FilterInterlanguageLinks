@@ -13,17 +13,17 @@ mw.messages.set( {
 	'fil-desc': 'Mostrar/ocultar link(s) que não aparece(m) por padrão',
 	'fil-hide': 'Ocultar $1'
 } );
-
-var langsToShow = [ 'de', 'en', 'es', 'fr', 'gl', 'it', 'pt', 'ru', 'zh' ],
-	sel = '.interwiki-' + langsToShow.join( ', .interwiki-' ) + ', .wbc-editpage',
-	count = $( '#p-lang' )
-		.find( 'li' )
-		.filter( function(){
-			return ! $( this ).is( sel );
-		} )
-		.addClass( 'interwiki-hidden-by-default' )
-		.hide()
-		.length;
+function customize (){
+	var langsToShow = [ 'de', 'en', 'es', 'fr', 'gl', 'it', 'pt', 'ru', 'zh' ],
+		sel = '.interwiki-' + langsToShow.join( ', .interwiki-' ) + ', .wbc-editpage',
+		count = $( '#p-lang' )
+			.find( 'li' )
+			.filter( function(){
+				return ! $( this ).is( sel );
+			} )
+			.addClass( 'interwiki-hidden-by-default' )
+			.hide()
+			.length;
 	if( !count ){
 		return;
 	}
@@ -42,4 +42,8 @@ var langsToShow = [ 'de', 'en', 'es', 'fr', 'gl', 'it', 'pt', 'ru', 'zh' ],
 		);
 		e.preventDefault();
 	} );
+}
+
+$( customize );
+
 }( mediaWiki, jQuery ) );
