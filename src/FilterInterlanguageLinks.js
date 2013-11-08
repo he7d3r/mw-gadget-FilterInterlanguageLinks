@@ -34,7 +34,7 @@ function customize (){
 		'p-show-ilw',
 		mw.msg( 'fil-desc' ),
 		null,
-        $( '.wbc-editpage' ).first()
+		$('#p-lang li:last')
 	) ).click( function( e ){
 		var isVisible = $( '.interwiki-hidden-by-default' ).toggle().is( ':visible' );
 		$( e.target ).text(
