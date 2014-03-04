@@ -41,7 +41,7 @@ function customize (){
 			isVisible ? mw.msg( 'fil-hide', count ) : mw.msg( 'fil-show', count )
 		);
 		e.preventDefault();
-	} );
+	} ).addClass( 'fil-toggle' );
 }
 
 $( customize );
