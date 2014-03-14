@@ -7,14 +7,16 @@
 /*global jQuery, mediaWiki */
 ( function ( mw, $ ) {
 'use strict';
-
-mw.messages.set( {
-	'fil-show': 'Mostrar mais $1',
-	'fil-desc': 'Mostrar/ocultar link(s) que não aparece(m) por padrão',
-	'fil-hide': 'Ocultar $1'
-} );
+var enMsgs = {
+	'fil-show': 'Show more $1',
+	'fil-desc': 'Toggle link(s) which do not appear by default',
+	'fil-hide': 'Hide $1'
+};
+mw.messages.set( $.extend( {}, enMsgs, window.filterInterlanguageLinks && window.filterInterlanguageLinks.msgs ) );
 function customize (){
-	var langsToShow = [ 'de', 'en', 'es', 'fr', 'gl', 'it', 'pt', 'ru', 'zh' ],
+	var // [[meta:List of Wikipedias#1 000 000+ articles]]
+		top = [ 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'ru', 'sv' ],
+		langsToShow = window.filterInterlanguageLinks && window.filterInterlanguageLinks.show || top,
 		sel = '.interwiki-' + langsToShow.join( ', .interwiki-' ) + ', .wbc-editpage',
 		count = $( '#p-lang' )
 			.find( 'li' )
