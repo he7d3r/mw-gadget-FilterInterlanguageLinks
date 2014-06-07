@@ -46,6 +46,8 @@ function customize (){
 	} ).addClass( 'fil-toggle' );
 }
 
-$( customize );
+if( mw.user.options.get('uls-compact-links') !== '1' ){
+	$( customize );
+}
 
 }( mediaWiki, jQuery ) );
