@@ -12,7 +12,7 @@
 	};
 	mw.messages.set( $.extend( {}, enMsgs, window.filterInterlanguageLinks && window.filterInterlanguageLinks.msgs ) );
 	function customize() {
-		var // [[meta:List of Wikipedias#1 000 000+ articles]]
+		var // [[m:List of Wikipedias#1 000 000+ articles]]
 			top = [ 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'ru', 'sv' ],
 			langsToShow = window.filterInterlanguageLinks && window.filterInterlanguageLinks.show || top,
 			sel = '.interwiki-' + langsToShow.join( ', .interwiki-' ) + ', .wbc-editpage',
