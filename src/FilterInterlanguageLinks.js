@@ -45,7 +45,10 @@
 	}
 
 	if ( mw.user.options.get('uls-compact-links') !== '1' ) {
-		$( customize );
+		$.when(
+			mw.loader.using( 'mediawiki.util' ),
+			$.ready
+		).then( customize );
 	}
 
 }( mediaWiki, jQuery ) );
