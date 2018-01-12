@@ -15,7 +15,7 @@
 		var // [[m:List of Wikipedias#1 000 000+ articles]]
 			top = [ 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'ru', 'sv' ],
 			langsToShow = window.filterInterlanguageLinks && window.filterInterlanguageLinks.show || top,
-			sel = '.interwiki-' + langsToShow.join( ', .interwiki-' ) + ', .wbc-editpage',
+			sel = '.interwiki-' + langsToShow.join( ', .interwiki-' ) + ', .wbc-editpage, .cx-new-interlanguage-link',
 			count = $( '#p-lang' )
 				.find( 'li' )
 				.filter( function () {
